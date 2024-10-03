@@ -29,3 +29,20 @@
 Ограничения:
 Приложение должно быть реализовано на React с использованием Typescript. Необходимо реализовать только клиентскую часть приложения, тест можно замокать, содержимое теста не имеет значения.
 При необходимости можно использовать любой стейтменжер, ui kit, библиотеки для работы с формами и т.д.
+
+
+ * Requirements:
+
+ * - Tests (any number)
+ * - Tests -> Questions (any number)
+ * - Test -> Time limit
+ * - Test -> should keep the progress
+ * - Question ->
+ * --short answer (20 symbols) / -> text input
+ * --long answer (200 symbols) / -> text area input
+ * --single answer / -> radio button/checkboxes
+ * --multiple answer -> radio button/checkboxes
+
+ * API /tests Response: Test[]
+ * API /tests/:id Response: Test
+ 
