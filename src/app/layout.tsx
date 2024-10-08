@@ -31,7 +31,7 @@ export default function RootLayout({
           <Header />
           <div className="flex-grow overflow-y-auto">
             {children}
-            </div>
+          </div>
 
         </div>
       </body>

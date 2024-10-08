@@ -1,22 +1,22 @@
-import type { Test } from "../domains/tests/types"
+import type { Test } from "../damains/tests/types"
 import Link from "next/link"
 
-type SelectingTestProps = {
-  Tests: Test[];
+type TestListProps = {
+  tests: Test[] ;
   selected: Test | null;
   onClickTest: (test: Test) => void;
 }
 
-export default function SelectingTest({ Tests, selected, onClickTest }: SelectingTestProps) {
+export default function TestList({ tests, selected, onClickTest }: TestListProps) {
 
   return (
     <div className="grid">
       <h1 className='flex justify-center text-gray-900 text-md md:text-xl mb-3 border
-       border-gray-200 rounded-xl p-8'>
+       border-gray-200 rounded-xl p-2'>
         Какой тест ты хочешь пройти?
       </h1>
       <div className="grid grid-cols-1 xl:grid xl:grid-cols-4 sm:grid sm:grid-cols-2 gap-4">
-        {Tests.map((test) => (
+        {tests.map((test) => (
           <div
             key={test.id}
             className={`${selected !== test ?
