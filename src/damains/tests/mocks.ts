@@ -1,6 +1,6 @@
 import { Key, ReactPortal, AwaitedReactNode, ReactElement, JSXElementConstructor, ReactNode, JSX } from "react";
 import type { Test } from "./types";
-
+import type { Questions } from "./types";
 export const TestsMock: Test[] = [
   {
     id: "1",
@@ -40,3 +40,115 @@ export const TestsMock: Test[] = [
   },
 ];
 
+export const QuestionsMock: Questions[] = [{
+  id: '1',
+  description: 'Дельфин, относиться к роду?',
+  type: 'ONE_CORRECT_ANSWER',
+  options: [{
+    id: '1',
+    description: 'Млекопитающие',
+  }, {
+    id: '2',
+    description: 'Земноводные',
+  }, {
+    id: '3',
+    description: 'Рыбы',
+  }]
+}, {
+  id: '2',
+  description: 'У какой обезьяны нет хвоста?',
+  type: 'MANY_CORRECT_ANSWERS',
+  options: [{
+    id: '1',
+    description: 'Горилла',
+  }, {
+    id: '2',
+    description: 'Шимпанзе',
+  }, {
+    id: '3',
+    description: 'Мартышка',
+  }]
+}, {
+  id: '3',
+  description: 'У какого млекопитающего самая продолжительная беременность?',
+  type: 'ANSWER_SHORT_TEXT',
+}, {
+  id: '4',
+  description: 'На територии каких стран находится Эверест?',
+  type: 'ANSWER_LONG_TEXT'
+}, {
+  id: '5',
+  description: 'Лондон, столица какой страны?',
+  type: 'ANSWER_SHORT_TEXT'
+},{
+  id: '6',
+  description: 'В какой области находится Санкт-Петербург?',
+  type: 'ONE_CORRECT_ANSWER',
+  options: [{
+    id: '1',
+    description: 'В Санкт-Петербургкской области',
+  }, {
+    id: '2',
+    description: 'В Северо-Заподной области',
+  }, {
+    id: '3',
+    description: 'В Ленинградской области',
+  }]
+},{
+  id: '7',
+  description: 'Год крещения Руси?',
+  type: 'ONE_CORRECT_ANSWER',
+  options: [{
+    id: '1',
+    description: '988',
+  }, {
+    id: '2',
+    description: '911',
+  }, {
+    id: '3',
+    description: '998',
+  }]
+}, {
+  id: '8',
+  description: 'Фамилия последнего имератора России?',
+  type: 'ANSWER_SHORT_TEXT'
+},{
+  id: '9',
+  description: 'Причины Первой мировой войны?',
+  type: 'MANY_CORRECT_ANSWERS',
+  options: [{
+    id: '1',
+    description: 'Колониальная политика империалистических держав',
+  }, {
+    id: '2',
+    description: 'Столкновения интересов на морских мировых путях',
+  }, {
+    id: '3',
+    description: 'Кризис перепроизводство в Соединенных Штатах Америки',
+  }]
+},
+{
+  id: '10',
+  description: 'Как можно получить число 16?',
+  type: 'MANY_CORRECT_ANSWERS',
+  options: [{
+    id: '1',
+    description: 'Взять квадратный корень из 256',
+  }, {
+    id: '2',
+    description: 'Сложить два и четырнадцать',
+  }, {
+    id: '3',
+    description: 'Взять кубический корень из 4098 и вычесть два',
+  }]
+}, {
+  id: '11',
+  description: 'Почему математикам не дают Нобеливскую премию?',
+  type: 'ANSWER_LONG_TEXT'
+}, {
+  id: '12',
+  description: 'Кто из российских математиков доказал гипотезу Пуанкаре?',
+  type: 'ANSWER_SHORT_TEXT'
+}
+
+]

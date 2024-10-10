@@ -9,6 +9,10 @@ const Test = ({ test }: any) => {
       <p className="py-5">Время на прохождение теста {test.timeLimit} минут</p>
       <ProgressBar />
       <Questions />
+      <button className="bg-indigo-600 mt-5 rounded-xl px-3 py-2 text-white hover:bg-indigo-400 
+      flex w-full justify-center items-center">
+        Следующий вопрос
+      </button>
     </div>
   )
 }

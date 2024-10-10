@@ -8,7 +8,7 @@ const notificationMethods = [
 
 export default function Questions() {
   return (
-    <fieldset>
+    <fieldset className="mt-5">
       <legend className="text-sm font-semibold leading-6 pb-5 text-gray-900">Первый вопрос</legend>
       <p className="mt-1 text-sm leading-6 text-gray-600">Москва, столица какой строны?</p>
       <div className="mt-6 space-y-6">
