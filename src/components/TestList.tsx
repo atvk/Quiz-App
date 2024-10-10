@@ -50,7 +50,7 @@ export default function TestList({ tests, selected, onClickTest }: TestListProps
                   }`}
               >
                 <Link
-                  href={test.id}>Пройти тест</Link>
+                  href={`test/`+ test.id}>Пройти тест</Link>
               </button>
             </div>
           </div>
