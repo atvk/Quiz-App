@@ -1,9 +1,10 @@
 import { Key, ReactPortal, AwaitedReactNode, ReactElement, JSXElementConstructor, ReactNode, JSX } from "react";
 import type { Test } from "./types";
 import type { Questions } from "./types";
+
 export const TestsMock: Test[] = [
   {
-    id: "1",
+    id: "BIOLOGY_TEST",
     name: "Биологии",
     questionIds: ["QUESTION_ONE", "QUESTION_TWO", "QUESTION_THREE"],
     timeLimit: 10,
@@ -12,7 +13,7 @@ export const TestsMock: Test[] = [
     }
   },
   {
-    id: "2",
+    id: "GEOGRAPHY_TEST",
     name: "Географии",
     questionIds: ["QUESTION_FOUR", "QUESTION_FIVE", "QUESTION_SIX"],
     timeLimit: 15,
@@ -21,7 +22,7 @@ export const TestsMock: Test[] = [
     }
   },
   {
-    id: "3",
+    id: "HISTORY_TEST",
     name: "Истории",
     questionIds: ["QUESTION_SEVEN", "QUESTION_EIGHT", "QUESTION_NINE"],
     timeLimit: 20,
@@ -30,7 +31,7 @@ export const TestsMock: Test[] = [
     }
   },
   {
-    id: "4",
+    id: "MATHEMATICS_TEST",
     name: "Математики",
     questionIds: ["QUESTION_TEN", "QUESTION_ELEVEN", "QUESTION_TWELVE"],
     timeLimit: 40,
@@ -41,7 +42,7 @@ export const TestsMock: Test[] = [
 ];
 
 export const QuestionsMock: Questions[] = [{
-  id: '1',
+  id: "QUESTION_ONE",
   description: 'Дельфин, относиться к роду?',
   type: 'ONE_CORRECT_ANSWER',
   options: [{
@@ -55,7 +56,7 @@ export const QuestionsMock: Questions[] = [{
     description: 'Рыбы',
   }]
 }, {
-  id: '2',
+  id: "QUESTION_TWO",
   description: 'У какой обезьяны нет хвоста?',
   type: 'MANY_CORRECT_ANSWERS',
   options: [{
@@ -69,19 +70,19 @@ export const QuestionsMock: Questions[] = [{
     description: 'Мартышка',
   }]
 }, {
-  id: '3',
+  id: "QUESTION_THREE",
   description: 'У какого млекопитающего самая продолжительная беременность?',
   type: 'ANSWER_SHORT_TEXT',
 }, {
-  id: '4',
+  id: "QUESTION_FOUR",
   description: 'На територии каких стран находится Эверест?',
   type: 'ANSWER_LONG_TEXT'
 }, {
-  id: '5',
+  id: "QUESTION_FIVE",
   description: 'Лондон, столица какой страны?',
   type: 'ANSWER_SHORT_TEXT'
 },{
-  id: '6',
+  id: "QUESTION_SIX",
   description: 'В какой области находится Санкт-Петербург?',
   type: 'ONE_CORRECT_ANSWER',
   options: [{
@@ -95,7 +96,7 @@ export const QuestionsMock: Questions[] = [{
     description: 'В Ленинградской области',
   }]
 },{
-  id: '7',
+  id: "QUESTION_SEVEN",
   description: 'Год крещения Руси?',
   type: 'ONE_CORRECT_ANSWER',
   options: [{
@@ -109,11 +110,11 @@ export const QuestionsMock: Questions[] = [{
     description: '998',
   }]
 }, {
-  id: '8',
+  id: "QUESTION_EIGHT",
   description: 'Фамилия последнего имератора России?',
   type: 'ANSWER_SHORT_TEXT'
 },{
-  id: '9',
+  id: "QUESTION_NINE",
   description: 'Причины Первой мировой войны?',
   type: 'MANY_CORRECT_ANSWERS',
   options: [{
@@ -128,7 +129,7 @@ export const QuestionsMock: Questions[] = [{
   }]
 },
 {
-  id: '10',
+  id: "QUESTION_TEN",
   description: 'Как можно получить число 16?',
   type: 'MANY_CORRECT_ANSWERS',
   options: [{
@@ -142,11 +143,11 @@ export const QuestionsMock: Questions[] = [{
     description: 'Взять кубический корень из 4098 и вычесть два',
   }]
 }, {
-  id: '11',
+  id: "QUESTION_ELEVEN",
   description: 'Почему математикам не дают Нобеливскую премию?',
   type: 'ANSWER_LONG_TEXT'
 }, {
-  id: '12',
+  id: "QUESTION_TWELVE",
   description: 'Кто из российских математиков доказал гипотезу Пуанкаре?',
   type: 'ANSWER_SHORT_TEXT'
 }
