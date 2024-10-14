@@ -2,8 +2,8 @@
 import { CheckCircle } from "@phosphor-icons/react/dist/ssr"
 
 const steps = [
-  { name: 'Step 1', href: '#', status: 'complete' },
-  { name: 'Step 2', href: '#', status: 'current' },
+  { name: 'Step 1', href: '#', status: 'current' },
+  { name: 'Step 2', href: '#', status: 'upcoming' },
   { name: 'Step 3', href: '#', status:  'upcoming'},
 ]
 
@@ -11,7 +11,7 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function ProgresBar() {
+export default function ProgressBar() {
   return (
     <nav aria-label="Progress">
       <ol role="list" className="flex items-center">

@@ -26,7 +26,7 @@ export type Test = {
   timeLimit: number | null;
 };
 
-type QuestionId = string;
+export type QuestionId = string;
 
 type QuestionType =
   | "ONE_CORRECT_ANSWER"

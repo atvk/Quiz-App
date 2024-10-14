@@ -1,4 +1,4 @@
-import Test from "@/components/Test"
+import TestView from "@/components/Test"
 
 async function getTestById(id: string) {
   try {
@@ -30,7 +30,10 @@ export default async function TestPage({ params }: any) {
 
   return (
     <>
-      <Test test={test} questions={questions} />
+      <TestView
+        test={test}
+        questions={questions}
+      />
     </>
   );
 };
