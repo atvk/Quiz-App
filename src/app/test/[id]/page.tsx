@@ -2,7 +2,7 @@ import TestView from "@/components/Test"
 
 async function getTestById(id: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/tests/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/tests/${id}`, {
       method: "GET", cache: "no-store",
     })
     if (!res.ok) {
@@ -15,7 +15,7 @@ async function getTestById(id: string) {
 }
 const getQuestions = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/questions", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/questions/`, {
       cache: "no-store",
     });
     return res.json();
@@ -31,6 +31,7 @@ export default async function TestPage({ params }: any) {
   return (
     <>
       <TestView
+        key={test.id}
         test={test}
         questions={questions}
       />

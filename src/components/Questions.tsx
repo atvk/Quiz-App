@@ -1,15 +1,21 @@
-
-import type { Questions, QuestionId } from "@/damains/tests/types"
+'use client'
+import type { Questions, Test } from "@/damains/tests/types"
+import { useState } from "react"
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr"
+import ButtonsQuestionMenu from "./ButtonsQuestionMenu"
+import ProgressBar from "./ProgressBar"
 
 interface QuestionsViewProps {
   questions: Questions[]
-  questionId: QuestionId
+  test: Test
 }
+export default function QuestionsView({ questions, test }: QuestionsViewProps) {
 
-export default function QuestionsView({ questions, questionId }: QuestionsViewProps) {
+  const [currentQuestionIdIndex, setCurrentQuestionIdIndex] = useState<number>(test.questionIds.indexOf(test.questionIds[0]))
+  let currentQuestionId = test.questionIds[currentQuestionIdIndex]
 
   const question = questions.find((question) => {
-    return question.id === questionId
+    return question.id === currentQuestionId
   })
 
   if (!question) {
@@ -18,14 +24,10 @@ export default function QuestionsView({ questions, questionId }: QuestionsViewPr
 
   return (
     <div className="grid grid-cols-1 mt-5">
+      <ProgressBar test={test} currentQuestionId={currentQuestionId} />
 
-      <button className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
-       text-white hover:bg-indigo-400 flex w-full justify-center items-center"
-       >
-        Следующий вопрос
-      </button>
 
-      <p className="grid mt-5 px-5 font-bold border border-indigo-600 rounded-xl">{question.description}</p>
+      <p className="grid mt-5 px-5 py-10 font-bold border border-indigo-600 rounded-xl">{question.description}</p>
       {(() => {
         switch (question.type) {
           case "ONE_CORRECT_ANSWER":
@@ -80,7 +82,7 @@ export default function QuestionsView({ questions, questionId }: QuestionsViewPr
             return null
         }
       })()}
-
+      <ButtonsQuestionMenu test={test} currentIndex={currentQuestionIdIndex} setCurrentIndex={setCurrentQuestionIdIndex} />
     </div>
   )
 }

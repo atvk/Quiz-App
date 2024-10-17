@@ -127,7 +127,7 @@ export const QuestionsMock: Questions[] = [
         id: "3",
         description: "Рыбы",
       },
-    ],
+    ]
   },
   {
     id: "QUESTION_TWO",
