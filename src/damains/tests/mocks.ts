@@ -15,7 +15,7 @@ export const TestsMock: Test[] = [
     id: "BIOLOGY_TEST",
     name: "Биологии",
     questionIds: ["QUESTION_ONE", "QUESTION_TWO", "QUESTION_THREE"],
-    timeLimit: 10,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -39,7 +39,7 @@ export const TestsMock: Test[] = [
     id: "GEOGRAPHY_TEST",
     name: "Географии",
     questionIds: ["QUESTION_FOUR", "QUESTION_FIVE", "QUESTION_SIX"],
-    timeLimit: 15,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -63,7 +63,7 @@ export const TestsMock: Test[] = [
     id: "HISTORY_TEST",
     name: "Истории",
     questionIds: ["QUESTION_SEVEN", "QUESTION_EIGHT", "QUESTION_NINE"],
-    timeLimit: 20,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -87,7 +87,7 @@ export const TestsMock: Test[] = [
     id: "MATHEMATICS_TEST",
     name: "Математики",
     questionIds: ["QUESTION_TEN", "QUESTION_ELEVEN", "QUESTION_TWELVE"],
-    timeLimit: 40,
+    timeLimit: 10,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -127,7 +127,7 @@ export const QuestionsMock: Questions[] = [
         id: "3",
         description: "Рыбы",
       },
-    ]
+    ],
   },
   {
     id: "QUESTION_TWO",
@@ -155,7 +155,7 @@ export const QuestionsMock: Questions[] = [
   },
   {
     id: "QUESTION_FOUR",
-    description: "На територии каких стран находится Эверест?",
+    description: "На территории каких стран находится Эверест?",
     type: "ANSWER_LONG_TEXT",
   },
   {
@@ -174,7 +174,7 @@ export const QuestionsMock: Questions[] = [
       },
       {
         id: "2",
-        description: "В Северо-Заподной области",
+        description: "В Северо-Западной области",
       },
       {
         id: "3",

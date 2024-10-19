@@ -23,7 +23,7 @@ export type Test = {
   id: TestId;
   name: string;
   questionIds: QuestionId[];
-  timeLimit: number | null;
+  timeLimit: number;
 };
 
 export type QuestionId = string;

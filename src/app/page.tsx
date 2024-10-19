@@ -6,8 +6,8 @@ import { useState } from "react"
 import useFetch from "@/hooks/useFetch";
 
 export default function Home() {
-const { data: tests, loading, error } = useFetch(`${process.env.NEXT_PUBLIC_API_HOST}/tests/`)
-const [selectedTest, setSelectedTest] = useState<Test | null>(null);
+  const { data: tests, loading, error } = useFetch(`${process.env.NEXT_PUBLIC_API_HOST}/tests/`)
+  const [selectedTest, setSelectedTest] = useState<Test | null>(null);
 
   return (
     <div className="p-5">

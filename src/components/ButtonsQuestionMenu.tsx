@@ -22,7 +22,7 @@ export default function ButtonsQuestionMenu({ test, currentIndex, setCurrentInde
             }
           }}
         >
-          Предыдущий вопрос
+          Перепроверить предыдущий ответ
         </button>}
       {currentIndex === test.questionIds.length - 1 ?
         <button className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
@@ -34,7 +34,7 @@ export default function ButtonsQuestionMenu({ test, currentIndex, setCurrentInde
           text-white hover:bg-indigo-400 flex w-full justify-center items-center"
           onClick={() => {
             if (currentIndex < test.questionIds.length) { setCurrentIndex(currentIndex + 1) }
-          }}> Следующий вопрос
+          }}>Ответить и перейти к следующему вопросу
         </button>}
     </div>
   )

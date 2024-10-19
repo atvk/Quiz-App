@@ -1,5 +1,6 @@
 import TestView from "@/components/Test"
 
+
 async function getTestById(id: string) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/tests/${id}`, {
@@ -13,6 +14,7 @@ async function getTestById(id: string) {
     console.log(error)
   }
 }
+
 const getQuestions = async () => {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/questions/`, {
@@ -27,7 +29,7 @@ const getQuestions = async () => {
 export default async function TestPage({ params }: any) {
   const test = await getTestById(params.id)
   const questions = await getQuestions()
-
+  
   return (
     <>
       <TestView
