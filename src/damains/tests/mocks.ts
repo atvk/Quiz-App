@@ -9,13 +9,14 @@ import {
 } from "react";
 import type { Test } from "./types";
 import type { Questions } from "./types";
+import type { QuestionAnswer } from "./types";
 
 export const TestsMock: Test[] = [
   {
-    id: "BIOLOGY_TEST",
-    name: "Биологии",
+    id: "ZOOLOGY_TEST",
+    name: "Зоологии",
     questionIds: ["QUESTION_ONE", "QUESTION_TWO", "QUESTION_THREE"],
-    timeLimit: 5,
+    timeLimit: 1,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -39,7 +40,7 @@ export const TestsMock: Test[] = [
     id: "GEOGRAPHY_TEST",
     name: "Географии",
     questionIds: ["QUESTION_FOUR", "QUESTION_FIVE", "QUESTION_SIX"],
-    timeLimit: 5,
+    timeLimit: 1,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -63,7 +64,7 @@ export const TestsMock: Test[] = [
     id: "HISTORY_TEST",
     name: "Истории",
     questionIds: ["QUESTION_SEVEN", "QUESTION_EIGHT", "QUESTION_NINE"],
-    timeLimit: 5,
+    timeLimit: 1,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -87,7 +88,7 @@ export const TestsMock: Test[] = [
     id: "MATHEMATICS_TEST",
     name: "Математики",
     questionIds: ["QUESTION_TEN", "QUESTION_ELEVEN", "QUESTION_TWELVE"],
-    timeLimit: 10,
+    timeLimit: 1,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -118,33 +119,39 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Млекопитающие",
+        checked: false
       },
       {
         id: "2",
         description: "Земноводные",
+        checked: false
       },
       {
         id: "3",
         description: "Рыбы",
+        checked: false
       },
     ],
   },
   {
     id: "QUESTION_TWO",
-    description: "У какой обезьяны нет хвоста?",
+    description: "У каких обезьян нет хвоста?",
     type: "MANY_CORRECT_ANSWERS",
     options: [
       {
         id: "1",
         description: "Горилла",
+        checked: false
       },
       {
         id: "2",
         description: "Шимпанзе",
+        checked: false
       },
       {
         id: "3",
         description: "Мартышка",
+        checked: false
       },
     ],
   },
@@ -171,14 +178,17 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "В Санкт-Петербургкской области",
+        checked: false
       },
       {
         id: "2",
         description: "В Северо-Западной области",
+        checked: false
       },
       {
         id: "3",
         description: "В Ленинградской области",
+        checked: false
       },
     ],
   },
@@ -195,14 +205,17 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "988",
+        checked: false
       },
       {
         id: "2",
         description: "911",
+        checked: false
       },
       {
         id: "3",
         description: "998",
+        checked: false
       },
     ],
   },
@@ -214,14 +227,17 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Колониальная политика империалистических держав",
+        checked: false
       },
       {
         id: "2",
         description: "Столкновения интересов на морских мировых путях",
+        checked: false
       },
       {
         id: "3",
         description: "Кризис перепроизводство в Соединенных Штатах Америки",
+        checked: false
       },
     ],
   },
@@ -233,14 +249,17 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Взять квадратный корень из 256",
+        checked: false
       },
       {
         id: "2",
         description: "Сложить два и четырнадцать",
+        checked: false
       },
       {
         id: "3",
         description: "Взять кубический корень из 4098 и вычесть два",
+        checked: false
       },
     ],
   },
@@ -251,7 +270,95 @@ export const QuestionsMock: Questions[] = [
   },
   {
     id: "QUESTION_TWELVE",
-    description: "Кто из российских математиков доказал гипотезу Пуанкаре?",
+    description: "Фамилия математика, который доказал гипотезу Пуанкаре?",
     type: "ANSWER_SHORT_TEXT",
   },
+];
+
+export const UserAnswersMock = [
+
+];
+
+export const RightAnswersMock = [
+  {
+    questionId: "QUESTION_ONE",
+    questionType: "ONE_CORRECT_ANSWER",
+    answer: [{ id: "1", description: "Млекопитающие" }],
+  },
+  {
+    questionId: "QUESTION_TWO",
+    questionType: "MANY_CORRECT_ANSWERS",
+    answer: [
+      { id: "1", description: "Горилла" },
+      { id: "2", description: "Шимпанзе" },
+    ],
+  },
+  {
+    questionId: "QUESTION_THREE",
+    questionType: "ANSWER_SHORT_TEXT",
+    answer: "Слон",
+  },
+  {
+    questionId: "QUESTION_FOUR",
+    questionType: "ANSWER_LONG_TEXT",
+    answer: "Китай и Непал",
+  },
+  {
+    questionId: "QUESTION_FIVE",
+    questionType: "ANSWER_SHORT_TEXT",
+    answer: "Великобритания",
+  },
+  {
+    questionId: "QUESTION_SIX",
+    questionType: "ONE_CORRECT_ANSWER",
+    answer: [{ id: "3", description: "В Ленинградской области" }],
+  },
+  {
+    questionId: "QUESTION_SEVEN",
+    questionType: "ANSWER_SHORT_TEXT",
+    answer: "Романов",
+  },
+  {
+    questionId: "QUESTION_EIGHT",
+    questionType: "ONE_CORRECT_ANSWER",
+    answer: [{ id: "1", description: "988" }],
+  },
+  {
+    questionId: "QUESTION_NINE",
+    questionType: "MANY_CORRECT_ANSWERS",
+    answer: [
+      {
+        id: "1",
+        description: "Колониальная политика империалистических держав",
+      },
+      {
+        id: "2",
+        description: "Столкновения интересов на морских мировых путях",
+      },
+    ],
+  },
+  {
+    questionId: "QUESTION_TEN",
+    questionType: "MANY_CORRECT_ANSWERS",
+    answer: [
+      {
+        id: "1",
+        description: "Взять квадратный корень из 256",
+      },
+      {
+        id: "2",
+        description: "Сложить два и четырнадцать",
+      },
+    ],
+  },
+  {
+    questionId: "QUESTION_ELEVEN",
+    questionType: "ANSWER_LONG_TEXT",
+    answer: "Нобель считал, что премия должна присуждаться в тех отраслях науки, которая приносит практическую пользу. Математику он считал наукой абстрактной.",
+  },
+  {
+    questionId: "QUESTION_TWELVE",
+    questionType: "ANSWER_SHORT_TEXT",
+    answer: "Перельман",
+  }
 ];

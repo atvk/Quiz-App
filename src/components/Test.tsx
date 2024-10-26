@@ -3,7 +3,6 @@ import type { Questions, Test } from "@/damains/tests/types"
 import { useState, useEffect } from "react"
 import QuestionsView from "@/components/QuestionsView"
 
-
 interface TestViewProps {
   questions: Questions[]
   test: Test
@@ -39,7 +38,14 @@ const TestView = ({ test, questions }: TestViewProps) => {
           questions={questions}
         />
         :
-        <div>Время вышло</div>}
+        <div>
+          <h2>Время вышло</h2>
+          <button
+            onClick={() => { }}
+            className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
+     text-white hover:bg-indigo-400 flex w-full justify-center items-center">Пройти тест снова</button>
+        </div>}
+
     </div>
   )
 }

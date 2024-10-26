@@ -1,13 +1,14 @@
 'use client'
 import type { Questions, Test } from "@/damains/tests/types"
 import { useState } from "react"
-import ButtonsQuestionMenu from "./ButtonsQuestionMenu"
+
 import ProgressBar from "./ProgressBar"
 import OptionsView from "./OptionsView"
 
 interface QuestionsViewProps {
   questions: Questions[]
   test: Test
+
 }
 export default function QuestionsView({ questions, test }: QuestionsViewProps) {
 
@@ -21,20 +22,21 @@ export default function QuestionsView({ questions, test }: QuestionsViewProps) {
   if (!question) {
     return null
   }
-
   return (
-    <div className="grid mt-5">
-      <ProgressBar
-        test={test}
-        currentQuestionId={currentQuestionId}
-      />
-      <span className="grid mt-5 px-5 py-10 font-bold border border-indigo-600 rounded-xl">{question.description}</span>
-      <OptionsView question={question} />
-      <ButtonsQuestionMenu
-        test={test}
-        currentIndex={currentQuestionIdIndex}
-        setCurrentIndex={setCurrentQuestionIdIndex}
-      />
-    </div>
+        <div className="grid mt-5">
+          <ProgressBar
+            test={test}
+            currentQuestionId={currentQuestionId}
+            currentIndex={currentQuestionIdIndex}
+            setCurrentIndex={setCurrentQuestionIdIndex}
+          />
+          <span className="grid mt-5 px-5 py-10 font-bold border border-indigo-600 rounded-xl">{question.description}</span>
+          <OptionsView
+            test={test}
+            question={question}
+            currentQuestionIdIndex={currentQuestionIdIndex}
+            setCurrentQuestionIdIndex={setCurrentQuestionIdIndex}
+          />
+        </div>
   )
 }

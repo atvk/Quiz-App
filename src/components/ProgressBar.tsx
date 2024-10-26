@@ -1,47 +1,49 @@
 'use client'
 import type { Test } from "@/damains/tests/types"
-import { MapPinSimpleArea } from "@phosphor-icons/react/dist/ssr"
+import { CaretDoubleRight, CaretDoubleLeft } from "@phosphor-icons/react/dist/ssr"
 
 interface ProgressBarProps {
   test: Test
   currentQuestionId: string;
+  currentIndex: number
+  setCurrentIndex: (currentIndex: number) => void
 }
 
-export default function ProgressBar({ test, currentQuestionId }: ProgressBarProps) {
+export default function ProgressBar({ test, currentIndex, setCurrentIndex }: ProgressBarProps) {
+
   return (
-    <div className="flex justify-center gap-5">
-      {test.questionIds.map((questionId) => {
-        return questionId === currentQuestionId ?
-          (
-            <>
-              <div aria-hidden="true" className="flex items-center">
-                <div className="h-0.5 w-full bg-indigo-600" />
-              </div>
-              <a
-                href="#"
-                className="relative flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-900"
-              >
-                <MapPinSimpleArea aria-hidden="true" className="h-5 w-5 text-white" />
-
-              </a>
-            </>)
+    <div className="flex justify-center items-center gap-2">
+      <div>
+        {currentIndex === 0 ?
+          <CaretDoubleLeft
+            className="flex relative justify-center items-center text-gray-200 font-bold"
+            size={20}
+            onClick={() => { if (currentIndex < test.questionIds.length) { setCurrentIndex(currentIndex) } }} />
           :
-          (<>
-            <div aria-hidden="true"
-              className="flex items-center">
-              <div className="h-0.5 w-full bg-gray-200" />
-            </div>
-            <a
-              href="#"
-              aria-current="step"
-              className="relative flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white"
-            >
-              <MapPinSimpleArea aria-hidden="true" className="h-5 w-5 text-gray-300" />
-
-            </a>
-          </>)
+          <CaretDoubleLeft
+            className="flex relative justify-center items-center text-indigo-600 font-bold"
+            size={20}
+            onClick={() => { if (currentIndex < test.questionIds.length) { setCurrentIndex(currentIndex - 1) } }} />
+        }
+      </div>
+      <div className="flex relative justify-center h-10 w-10 p-2  items-center text-xl text-indigo-600 font-bold border
+     border-indigo-600 rounded-full">
+        {currentIndex + 1}/{test.questionIds.length}
+      </div>
+      <div>{currentIndex === test.questionIds.length - 1 ?
+        <CaretDoubleRight
+          className="flex relative justify-center items-center text-gray-200 font-bold"
+          size={20}
+          onClick={() => { alert("Ура! Вы прошли тест!") }}
+        />
+        :
+        <CaretDoubleRight
+          className="flex relative justify-center items-center text-indigo-600 font-bold"
+          size={20}
+          onClick={() => { if (currentIndex < test.questionIds.length) { setCurrentIndex(currentIndex + 1) } }}
+        />
       }
-      )}
+      </div>
     </div>
   )
 }

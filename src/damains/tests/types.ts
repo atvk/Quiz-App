@@ -28,7 +28,7 @@ export type Test = {
 
 export type QuestionId = string;
 
-type QuestionType =
+export type QuestionType =
   | "ONE_CORRECT_ANSWER"
   | "MANY_CORRECT_ANSWERS"
   | "ANSWER_SHORT_TEXT"
@@ -50,21 +50,29 @@ export type Questions =
       type: Extract<QuestionType, "ANSWER_SHORT_TEXT" | "ANSWER_LONG_TEXT">;
     };
 
-type Answer_options_Id = string;
+export type Answer_options_Id = string;
 
-interface Answer_options {
+export type Answer_options = {
+  questionId: string;
   id: Answer_options_Id;
   description: string;
-}
+  checked: boolean;
+};
 
 export type QuestionAnswer =
-  {
+  | {
       questionId: QuestionId;
-      questionType: Extract<QuestionType, "ONE_CORRECT_ANSWER" | "MANY_CORRECT_ANSWERS">;
+      questionType: Extract<
+        QuestionType,
+        "ONE_CORRECT_ANSWER" | "MANY_CORRECT_ANSWERS"
+      >;
       answer: Answer_options[];
     }
   | {
       questionId: QuestionId;
-      questionType: Extract<QuestionType, "ANSWER_SHORT_TEXT" | "ANSWER_LONG_TEXT">;
+      questionType: Extract<
+        QuestionType,
+        "ANSWER_SHORT_TEXT" | "ANSWER_LONG_TEXT"
+      >;
       answer: string;
     };
