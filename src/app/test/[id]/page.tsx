@@ -32,13 +32,11 @@ export default async function TestPage({ params }: any) {
   
   
   return (
-    <>
       <TestView
         key={test.id}
         test={test}
         questions={questions}
       />
-    </>
   );
 };
 

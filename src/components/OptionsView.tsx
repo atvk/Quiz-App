@@ -1,6 +1,5 @@
 'use client'
 import type { Questions, Test } from "@/damains/tests/types"
-import { useState } from "react"
 
 interface QuestionsViewProps {
   question: Questions
@@ -10,37 +9,43 @@ interface QuestionsViewProps {
 }
 export default function OptionsView({ test, question,
   currentQuestionIdIndex, setCurrentQuestionIdIndex }: QuestionsViewProps) {
-  
-function handleSubmit(e: { preventDefault: () => void; target: any }) {
+
+  function handleSubmit(e: { preventDefault: () => void; target: any }) {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
 
-   
-  const formJson = Object.fromEntries(formData.entries());
+    fetch('http://localhost:3000/api/answersUser',
+      { method: form.method, body: formData });
+
+    const formJson = Object.fromEntries(formData.entries());
     console.log(formJson);
-    
+
     if (currentQuestionIdIndex < test.questionIds.length) {
       setCurrentQuestionIdIndex(currentQuestionIdIndex + 1)
     }
   }
 
   return (
-    <div className="grid grid-cols-1 mt-5">
+    <div className="grid grid-cols-1 m-5 border border-indigo-600 text-gray-600 rounded-xl">
+      <span className="flex justify-start mx-10 px-5 items-center text-gray-600 mt-10 uppercase font-bold">
+        {question.description}
+      </span>
       {(() => {
         switch (question.type) {
           case "ONE_CORRECT_ANSWER":
             return <form method="post" onSubmit={handleSubmit} className="grid mt-5 px-5">
+
               {question.options.map((option) => {
                 return (
                   <div key={option.id}
-                    className="flex gap-5 items-center py-2">
+                    className="flex gap-5 justify-start mx-10 items-center py-3">
                     <input
                       type="checkbox"
                       name={question.id}
                       value={option.description}
-                      className="h-5 w-5 border-gray-300 text-indigo-600 focus:
-                       ring-indigo-600 accent-indigo-600"
+                      className="h-5 w-5 border border-indigo-600 text-indigo-600 
+                      focus:ring-indigo-600 accent-indigo-600"
                     />
                     <span>{option.description}</span>
                   </div>
@@ -48,8 +53,10 @@ function handleSubmit(e: { preventDefault: () => void; target: any }) {
               })}
               <button
                 type="submit"
-                className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
-     text-white hover:bg-indigo-400 flex w-full justify-center items-center"
+                className="flex justify-center m-10 items-center uppercase cursor-pointer
+                 p-2 text-indigo-600 border border-indigo-600 rounded-xl transition ease-in-out 
+                 delay-150 bg-white hover:-translate-y-1 hover:scale-110
+                  hover:bg-indigo-200 duration-300"
               >Ответить
               </button>
             </form>
@@ -58,22 +65,24 @@ function handleSubmit(e: { preventDefault: () => void; target: any }) {
               {question.options.map((option, index) => {
                 return (
                   <div key={index}
-                    className="flex gap-5 items-center py-2">
+                    className="flex gap-5 justify-start mx-10 items-center py-3">
                     <input
                       type="checkbox"
                       name={question.id}
                       value={option.description}
-                      className="h-5 w-5 border-gray-300 text-indigo-600 focus:
-                       ring-indigo-600 accent-indigo-600"
+                      className="h-5 w-5 border border-indigo-600 text-indigo-600 
+                    focus:ring-indigo-600 accent-indigo-600"
                     />
-                    <span>{option.description}</span>
+                    <span className=" text-gray-600">{option.description}</span>
                   </div>
                 )
               })}
               <button
                 type="submit"
-                className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
-     text-white hover:bg-indigo-400 flex w-full justify-center items-center"
+                className="flex justify-center m-10 items-center uppercase cursor-pointer
+               p-2 text-indigo-600 border border-indigo-600 rounded-xl transition ease-in-out 
+               delay-150 bg-white hover:-translate-y-1 hover:scale-110
+                hover:bg-indigo-200 duration-300"
               >Ответить
               </button>
             </form>
@@ -84,29 +93,34 @@ function handleSubmit(e: { preventDefault: () => void; target: any }) {
                   type='text'
                   name={question.id}
                   placeholder="Дай короткий ответ"
-                  className="block p-2.5 w-full text-sm bg-gray-50 border border-indigo-600
-                  rounded-xl text-gray-900"
+                  className="flex justify-start items-center mx-10 p-2 text-sm bg-white 
+                  border border-indigo-600 rounded-xl text-gray-600"
                 />
                 <button
                   type="submit"
-                  className="bg-indigo-600 mt-5 rounded-xl px-3 py-2
-     text-white hover:bg-indigo-400 flex w-full justify-center items-center"
+                  className="flex justify-center m-10 items-center uppercase cursor-pointer
+               p-2 text-indigo-600 border border-indigo-600 rounded-xl transition ease-in-out 
+               delay-150 bg-white hover:-translate-y-1 hover:scale-110
+                hover:bg-indigo-200 duration-300"
                 >Ответить
                 </button>
               </form>
             )
           case "ANSWER_LONG_TEXT":
             return (
-              <form method="post" onSubmit={handleSubmit} className="flex gap-5 items-center py-2">
+              <form method="post" onSubmit={handleSubmit} className="grid mt-5 px-5">
                 <textarea
                   name={question.id}
-                  className="block p-2.5 w-full text-sm bg-gray-50 border
-                   border-indigo-600 rounded-xl text-gray-900"
+                  className="flex justify-start items-center mx-10 p-2 text-sm bg-white 
+                  border border-indigo-600 rounded-xl text-gray-600"
                   placeholder="Дай развернутый ответ"
                 />
                 <button
                   type="submit"
-                  className="bg-indigo-600 mt-5 rounded-xl px-3 py-2 text-white hover:bg-indigo-400 flex w-full justify-center items-center"
+                  className="flex justify-center m-10 items-center uppercase cursor-pointer
+               p-2 text-indigo-600 border border-indigo-600 rounded-xl transition ease-in-out 
+               delay-150 bg-white hover:-translate-y-1 hover:scale-110
+                hover:bg-indigo-200 duration-300"
                 >Ответить
                 </button>
               </form>

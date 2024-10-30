@@ -26,7 +26,7 @@ export default function ProgressBar({ test, currentIndex, setCurrentIndex }: Pro
             onClick={() => { if (currentIndex < test.questionIds.length) { setCurrentIndex(currentIndex - 1) } }} />
         }
       </div>
-      <div className="flex relative justify-center h-10 w-10 p-2  items-center text-xl text-indigo-600 font-bold border
+      <div className="flex relative justify-center h-10 w-10 p-2  items-center text-xl text-indigo-600 border
      border-indigo-600 rounded-full">
         {currentIndex + 1}/{test.questionIds.length}
       </div>

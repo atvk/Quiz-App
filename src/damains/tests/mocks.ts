@@ -16,7 +16,7 @@ export const TestsMock: Test[] = [
     id: "ZOOLOGY_TEST",
     name: "Зоологии",
     questionIds: ["QUESTION_ONE", "QUESTION_TWO", "QUESTION_THREE"],
-    timeLimit: 1,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -40,7 +40,7 @@ export const TestsMock: Test[] = [
     id: "GEOGRAPHY_TEST",
     name: "Географии",
     questionIds: ["QUESTION_FOUR", "QUESTION_FIVE", "QUESTION_SIX"],
-    timeLimit: 1,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -64,7 +64,7 @@ export const TestsMock: Test[] = [
     id: "HISTORY_TEST",
     name: "Истории",
     questionIds: ["QUESTION_SEVEN", "QUESTION_EIGHT", "QUESTION_NINE"],
-    timeLimit: 1,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -88,7 +88,7 @@ export const TestsMock: Test[] = [
     id: "MATHEMATICS_TEST",
     name: "Математики",
     questionIds: ["QUESTION_TEN", "QUESTION_ELEVEN", "QUESTION_TWELVE"],
-    timeLimit: 1,
+    timeLimit: 5,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -119,17 +119,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Млекопитающие",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "Земноводные",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "Рыбы",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -141,17 +144,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Горилла",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "Шимпанзе",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "Мартышка",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -178,17 +184,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "В Санкт-Петербургкской области",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "В Северо-Западной области",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "В Ленинградской области",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -205,17 +214,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "988",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "911",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "998",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -227,17 +239,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Колониальная политика империалистических держав",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "Столкновения интересов на морских мировых путях",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "Кризис перепроизводство в Соединенных Штатах Америки",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -249,17 +264,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Взять квадратный корень из 256",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "2",
         description: "Сложить два и четырнадцать",
-        checked: false
+        checked: false,
+        questionId: "",
       },
       {
         id: "3",
         description: "Взять кубический корень из 4098 и вычесть два",
-        checked: false
+        checked: false,
+        questionId: "",
       },
     ],
   },
@@ -275,9 +293,7 @@ export const QuestionsMock: Questions[] = [
   },
 ];
 
-export const UserAnswersMock = [
-
-];
+export const UserAnswersMock = [{}];
 
 export const RightAnswersMock = [
   {
@@ -354,11 +370,12 @@ export const RightAnswersMock = [
   {
     questionId: "QUESTION_ELEVEN",
     questionType: "ANSWER_LONG_TEXT",
-    answer: "Нобель считал, что премия должна присуждаться в тех отраслях науки, которая приносит практическую пользу. Математику он считал наукой абстрактной.",
+    answer:
+      "Нобель считал, что премия должна присуждаться в тех отраслях науки, которая приносит практическую пользу. Математику он считал наукой абстрактной.",
   },
   {
     questionId: "QUESTION_TWELVE",
     questionType: "ANSWER_SHORT_TEXT",
     answer: "Перельман",
-  }
+  },
 ];
