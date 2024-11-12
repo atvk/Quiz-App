@@ -43,36 +43,29 @@ export type Questions =
         "ONE_CORRECT_ANSWER" | "MANY_CORRECT_ANSWERS"
       >;
       options: Answer_options[];
+      answer: string;
     }
   | {
       id: QuestionId;
       description: string;
       type: Extract<QuestionType, "ANSWER_SHORT_TEXT" | "ANSWER_LONG_TEXT">;
-    };
-
-export type Answer_options_Id = string;
-
-export type Answer_options = {
-  questionId: string;
-  id: Answer_options_Id;
-  description: string;
-  checked: boolean;
-};
-
-export type QuestionAnswer =
-  | {
-      questionId: QuestionId;
-      questionType: Extract<
-        QuestionType,
-        "ONE_CORRECT_ANSWER" | "MANY_CORRECT_ANSWERS"
-      >;
-      answer: Answer_options[];
-    }
-  | {
-      questionId: QuestionId;
-      questionType: Extract<
-        QuestionType,
-        "ANSWER_SHORT_TEXT" | "ANSWER_LONG_TEXT"
-      >;
       answer: string;
     };
+
+export type Answer_options = {
+  id: string;
+  description: string;
+};
+
+export type QuestionsAnswer = [
+  {
+    questionId: string;
+    questionType: string;
+    answers: [
+      {
+        id: string;
+        answer: string;
+      }
+    ];
+  }
+];

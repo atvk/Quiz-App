@@ -1,5 +1,4 @@
 'use client'
-
 import type { Test } from "@/damains/tests/types";
 import TestList from "@/components/TestList"
 import { useState } from "react"
@@ -11,6 +10,7 @@ export default function Home() {
 
   return (
     <div className="p-5">
+     
       {error && <>{error}</>}
       {loading && <>Loading...</>}
       {tests && <TestList
@@ -19,5 +19,6 @@ export default function Home() {
         onClickTest={(test: Test) => { return setSelectedTest(test) }}
       />}
     </div>
+
   )
 }

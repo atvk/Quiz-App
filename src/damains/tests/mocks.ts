@@ -7,16 +7,15 @@ import {
   ReactNode,
   JSX,
 } from "react";
-import type { Test } from "./types";
+import type { QuestionsAnswer, Test } from "./types";
 import type { Questions } from "./types";
-import type { QuestionAnswer } from "./types";
 
 export const TestsMock: Test[] = [
   {
     id: "ZOOLOGY_TEST",
     name: "Зоологии",
     questionIds: ["QUESTION_ONE", "QUESTION_TWO", "QUESTION_THREE"],
-    timeLimit: 5,
+    timeLimit: 2,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -40,7 +39,7 @@ export const TestsMock: Test[] = [
     id: "GEOGRAPHY_TEST",
     name: "Географии",
     questionIds: ["QUESTION_FOUR", "QUESTION_FIVE", "QUESTION_SIX"],
-    timeLimit: 5,
+    timeLimit: 2,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -64,7 +63,7 @@ export const TestsMock: Test[] = [
     id: "HISTORY_TEST",
     name: "Истории",
     questionIds: ["QUESTION_SEVEN", "QUESTION_EIGHT", "QUESTION_NINE"],
-    timeLimit: 5,
+    timeLimit: 2,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -88,7 +87,7 @@ export const TestsMock: Test[] = [
     id: "MATHEMATICS_TEST",
     name: "Математики",
     questionIds: ["QUESTION_TEN", "QUESTION_ELEVEN", "QUESTION_TWELVE"],
-    timeLimit: 5,
+    timeLimit: 2,
     map: function (
       _arg0: (test: {
         id: Key | null | undefined;
@@ -119,22 +118,19 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Млекопитающие",
-        checked: false,
-        questionId: "",
       },
       {
         id: "2",
         description: "Земноводные",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "3",
         description: "Рыбы",
-        checked: false,
-        questionId: "",
+       
       },
     ],
+    answer: "Млекопитающие",
   },
   {
     id: "QUESTION_TWO",
@@ -144,37 +140,38 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Горилла",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "2",
         description: "Шимпанзе",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "3",
         description: "Мартышка",
-        checked: false,
-        questionId: "",
+     
       },
     ],
+    answer: "Горилла",
   },
   {
     id: "QUESTION_THREE",
     description: "У какого млекопитающего самая продолжительная беременность?",
     type: "ANSWER_SHORT_TEXT",
+    answer: "",
   },
   {
     id: "QUESTION_FOUR",
     description: "На территории каких стран находится Эверест?",
     type: "ANSWER_LONG_TEXT",
+    answer: "",
   },
   {
     id: "QUESTION_FIVE",
     description: "Лондон, столица какой страны?",
     type: "ANSWER_SHORT_TEXT",
+    answer: "Великобритании",
   },
   {
     id: "QUESTION_SIX",
@@ -184,27 +181,26 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "В Санкт-Петербургкской области",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "2",
         description: "В Северо-Западной области",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "3",
         description: "В Ленинградской области",
-        checked: false,
-        questionId: "",
+        
       },
     ],
+    answer: "В Ленинградской области",
   },
   {
     id: "QUESTION_SEVEN",
     description: "Фамилия последнего имератора России?",
     type: "ANSWER_SHORT_TEXT",
+    answer: "Романов",
   },
   {
     id: "QUESTION_EIGHT",
@@ -214,22 +210,20 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "988",
-        checked: false,
-        questionId: "",
+        
       },
       {
         id: "2",
         description: "911",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "3",
         description: "998",
-        checked: false,
-        questionId: "",
+       
       },
     ],
+    answer: "988",
   },
   {
     id: "QUESTION_NINE",
@@ -239,22 +233,21 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Колониальная политика империалистических держав",
-        checked: false,
-        questionId: "",
+        
       },
       {
         id: "2",
         description: "Столкновения интересов на морских мировых путях",
-        checked: false,
-        questionId: "",
+        
       },
       {
         id: "3",
         description: "Кризис перепроизводство в Соединенных Штатах Америки",
-        checked: false,
-        questionId: "",
+       
       },
     ],
+    answer: "Колониальная политика империалистических держав"
+
   },
   {
     id: "QUESTION_TEN",
@@ -264,36 +257,47 @@ export const QuestionsMock: Questions[] = [
       {
         id: "1",
         description: "Взять квадратный корень из 256",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "2",
         description: "Сложить два и четырнадцать",
-        checked: false,
-        questionId: "",
+       
       },
       {
         id: "3",
         description: "Взять кубический корень из 4098 и вычесть два",
-        checked: false,
-        questionId: "",
+        
       },
     ],
+    answer: "Сложить два и четырнадцать",
   },
   {
     id: "QUESTION_ELEVEN",
     description: "Почему математикам не дают Нобеливскую премию?",
     type: "ANSWER_LONG_TEXT",
+    answer: "Математика абстрактная наука"
   },
   {
     id: "QUESTION_TWELVE",
     description: "Фамилия математика, который доказал гипотезу Пуанкаре?",
     type: "ANSWER_SHORT_TEXT",
+    answer: "Перельман"
   },
 ];
 
-export const UserAnswersMock = [{}];
+export const UserAnswersMock:QuestionsAnswer  = [
+  {
+    questionId: "",
+    questionType: "",
+    answers: [
+      {
+        id:'' ,
+        answer: '',
+      }
+    ]
+}
+]
 
 export const RightAnswersMock = [
   {
@@ -371,7 +375,7 @@ export const RightAnswersMock = [
     questionId: "QUESTION_ELEVEN",
     questionType: "ANSWER_LONG_TEXT",
     answer:
-      "Нобель считал, что премия должна присуждаться в тех отраслях науки, которая приносит практическую пользу. Математику он считал наукой абстрактной.",
+      "Нобель считал, что премия должна присуждаться в тех отраслях науки, которая приносит практическую пользу. Математика абстрактная наука",
   },
   {
     questionId: "QUESTION_TWELVE",

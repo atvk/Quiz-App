@@ -25,3 +25,17 @@ body {
     text-wrap: balance;
   }
 }
+
+.correct {
+  background: rgb(141, 169, 141);
+  border-radius: 20px;
+  padding: 2px;
+  border-color: rgb(22, 26, 22);
+}
+
+.uncorrect {
+  background: rgb(214, 135, 169);
+  border-radius: 20px;
+  padding: 2px;
+  border: rgb(26, 16, 20);
+}

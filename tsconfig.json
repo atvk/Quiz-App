@@ -27,7 +27,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/404.js"
-, "src/components/Timer.tsx"  ],
+, "src/components/Timer.tsx", "src/components/Testing.tsx"  ],
   "exclude": ["node_modules"]
 }
 
